@@ -1,21 +1,21 @@
-import { LoginPage } from "./pages/login_page"
 import { HomePage } from "./pages/home_page"
+import { ManagerPage } from "./pages/manager_page"
 
-const loginPage = new LoginPage()
-const HomePage = new HomePage()
+const homePage = new HomePage()
+const managerPage = new ManagerPage()
 
 describe('All Login tests', function () {
 
     it('Login test 1', () => {
         cy.visit('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login')
-        loginPage.enterUsername('standard_user')
-        loginPage.enterPassword('asecret_sauce')
-        loginPage.clickLogin()
+        homePage.clickBankManagerLogin()
     })
 
     it('Login test 2', () => {
-        loginPage.enterUsername('Adm')
-        loginPage.enterPassword('admin123')
-        loginPage.clickLogin()
+        managerPage.clickAddCustomerButton()
+        managerPage.enterFirstName('Ben')
+        managerPage.enterLastName('Benson')
+        managerPage.enterPostCode('2100')
+        managerPage.clickAddCustomerSubmitButton()
     })
 })    

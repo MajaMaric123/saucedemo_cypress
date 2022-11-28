@@ -1,18 +1,9 @@
-export class HomePage{
-    
-    cutomerLoginButton = '//*[@id="user-name"]'
-    password_textbox = '//*[@id="password"]'
-    login_button = '//*[@id="login-button"]'
+export class HomePage {
 
-    enterUsername(username){
-        cy.get(this.username_textbox).type(username)
-    }
+    cutomerLoginButton = '.borderM > :nth-child(1) > .btn'
+    bankManagerLoginButton = ':nth-child(3) > .btn'
 
-    enterPassword(password){
-        cy.get(this.password_textbox).type(password)
-    }
-
-    clickLogin(){
-        cy.get(this.login_button).click()
+    clickBankManagerLogin() {
+        cy.get(this.bankManagerLoginButton).click()
     }
 }
