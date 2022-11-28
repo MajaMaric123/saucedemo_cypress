@@ -6,12 +6,12 @@ const managerPage = new ManagerPage()
 
 describe('All Login tests', function () {
 
-    it('Login test 1', () => {
+    it('Bank Manager Login', () => {
         cy.visit('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login')
         homePage.clickBankManagerLogin()
     })
 
-    it('Login test 2', () => {
+    it('Add customer test', () => {
         managerPage.clickAddCustomerButton()
         managerPage.enterFirstName('Ben')
         managerPage.enterLastName('Benson')
