@@ -7,6 +7,10 @@ export class ManagerPage {
     lastNameField = '[ng-model="lName"]'
     postCodeField = '[ng-model="postCd"]'
     addCustomerSubmitButton = '[type="submit"]'
+    customerNameField = '[id="userSelect"]'
+    currencyField = '[id="currency"]'
+    processButton = '[type="submit"]'
+    customersTable = '[class="marTop ng-scope"]'
 
     clickAddCustomerButton() {
         cy.get(this.addCustomerButton).click()
@@ -26,5 +30,21 @@ export class ManagerPage {
 
     clickAddCustomerSubmitButton() {
         cy.get(this.addCustomerSubmitButton).click()
+    }
+
+    clickOpenAccountButton() {
+        cy.get(this.openAccountButton).click()
+    }
+
+    selectCustomerName(){
+        cy.get(this.customerNameField).children().should('have.text', 'Ben Benson')
+    }
+
+    clickCustomersButton() {
+        cy.get(this.customersButton).click()
+    }
+
+    customerIsVisibleInTable(customerName){
+        cy.get(this.customersTable).should('contain', customerName)
     }
 }

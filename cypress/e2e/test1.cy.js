@@ -9,6 +9,7 @@ describe('All Login tests', function () {
     it('Bank Manager Login', () => {
         cy.visit('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login')
         homePage.clickBankManagerLogin()
+        cy.get(managerPage.addCustomerButton).should('be.visible')
     })
 
     it('Add customer test', () => {
@@ -17,5 +18,10 @@ describe('All Login tests', function () {
         managerPage.enterLastName('Benson')
         managerPage.enterPostCode('2100')
         managerPage.clickAddCustomerSubmitButton()
+    })
+
+    it('Click Open Account test', () => {
+        managerPage.clickCustomersButton()
+        managerPage.customerIsVisibleInTable('Ben')
     })
 })    
