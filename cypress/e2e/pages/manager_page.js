@@ -22,7 +22,7 @@ export class ManagerPage {
 
     enterLastName(lastName) {
         cy.get(this.lastNameField).type(lastName)
-    }
+    } 
 
     enterPostCode(postCode) {
         cy.get(this.postCodeField).type(postCode)
